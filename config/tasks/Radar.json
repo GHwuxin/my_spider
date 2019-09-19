@@ -1,0 +1,32 @@
+{
+	"Name": "Radar",
+	"ThreadNum": 3,
+	"DataSavePath": "H:/dawnload/yyyyMMdd",
+	"LoopTimespan": 0,
+	"RequestCfg": {
+		"Url": "http://www.weather.com.cn/radar/radar.html",
+		"ResponseType": "html",
+		"Method": "GET",
+		"PostData": "",
+		"Header": {},
+		"Selecter": {
+			"Name": "img",
+			"Attr": "src",
+			"Pattern": "/ACHN_QREF_\\d{8}_\\d{6}\\.png$"
+		},
+		"ChromedpTasks": [
+            [
+                "Navigate",
+                ""
+            ],
+            [
+                "WaitReady",
+                "#map"
+            ],
+            [
+                "OuterHTML",
+                "html"
+            ]
+        ]
+	}
+}
