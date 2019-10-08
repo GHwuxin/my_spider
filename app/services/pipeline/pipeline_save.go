@@ -94,7 +94,7 @@ func (this *PipelineSave) Process(items *models.PageItems, t task.Task) {
 					err = filesave.HttpDownloadFile(url, header, nil, tempFilepath, RefreshDownloadStatus)
 					results <- &DownloadResult{url: url, err: err}
 					if err != nil {
-						logs.Instance.Warnf("download file(%s) fail error:", tempFilepath, err.Error())
+						logs.Instance.Warnf("download file(%s) fail error:%s", tempFilepath, err.Error())
 					}
 				}
 			}(this.rootDir, key, value, this.results)
