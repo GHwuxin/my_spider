@@ -1,7 +1,7 @@
 {
 	"Name": "Radar",
 	"ThreadNum": 3,
-	"DataSavePath": "H:/dawnload/yyyyMMdd",
+	"DataSavePath": "D:/download/yyyyMMdd",
 	"LoopTimespan": 0,
 	"RequestCfg": {
 		"Url": "http://www.weather.com.cn/radar/radar.html",

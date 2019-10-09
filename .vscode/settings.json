@@ -1,6 +1,6 @@
 {
     "go.goroot": "C:\\go",
-    "go.gopath": "C:\\Users\\yangj\\go_workspace",
+    "go.gopath": "C:\\go_workspace",
     "go.gocodeAutoBuild": false,
     "go.buildOnSave":"off",
     "go.buildTags": "",
