@@ -41,15 +41,15 @@ func (normalC *NormalController) Run() error {
 	if err != nil {
 		return errors.New("etime parse error:" + err.Error())
 	}
-	sTimeZeroStr := sDatetime.Format("2006-01-02") + " 00:00:00"
-	eTimeZeroStr := eDatetime.Add(time.Hour*24).Format("2006-01-02") + " 00:00:00"
+	sTimeZeroStr := sDatetime.Format("2006-01-02 15:0") + "0:00"
+	eTimeZeroStr := eDatetime.Format("2006-01-02 15:0") + "0:00"
 	sTimeZero, _ := time.Parse("2006-01-02 15:04:05", sTimeZeroStr)
 	eTimeZero, _ := time.Parse("2006-01-02 15:04:05", eTimeZeroStr)
 	tempTime := sTimeZero
 	normalC.resourceManage = resourcemanage.NewResourceManageChan(8)
 	for tempTime.Before(eTimeZero) {
-		normalC.resourceManage.GetOne()
 		if !tempTime.After(eDatetime) && !tempTime.Before(sDatetime) {
+			normalC.resourceManage.GetOne()
 			go func(tempDir string, tempT time.Time) {
 				defer normalC.resourceManage.FreeOne()
 				// http://d1.weather.com.cn/radar_channel/radar/pic/ACHN_QREF_20191008_064000.png

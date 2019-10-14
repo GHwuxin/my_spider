@@ -2,7 +2,7 @@
 	"Name": "Radar",
 	"ThreadNum": 3,
 	"DataSavePath": "D:/download/yyyyMMdd",
-	"LoopTimespan": 0,
+	"LoopTimespan": 600,
 	"RequestCfg": {
 		"Url": "http://www.weather.com.cn/radar/radar.html",
 		"ResponseType": "html",
